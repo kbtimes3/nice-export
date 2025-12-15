@@ -1,0 +1,225 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7725,        217]
+NotebookOptionsPosition[      6338,        167]
+NotebookOutlinePosition[      7129,        196]
+CellTagsIndexPosition[      6962,        189]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Exit", "[", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.972732234932176*^9, 3.972732236416416*^9}},
+ Background->RGBColor[1, 0.85, 0.85]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Import", "[", "\"\<nice_export.wl\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.972732825004257*^9, 3.972732838545474*^9}, {
+  3.9727349935610857`*^9, 3.972734994905006*^9}},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"Loaded nice_export\"\>"], "Print",
+ CellChangeTimes->{3.972734796109644*^9, 3.972735002042104*^9, 
+  3.9727357201259117`*^9, 3.972992742664218*^9, 3.972993712722042*^9, 
+  3.972993749962056*^9, 3.972995075209447*^9, 3.973055714686757*^9, 
+  3.973065356061833*^9, 3.9730666073115177`*^9, 3.973066689583527*^9, 
+  3.973066998749813*^9, 3.974805262149313*^9, 3.974805867926147*^9, 
+  3.974805994132031*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"?", "GetInfos"}], "\[IndentingNewLine]", 
+ RowBox[{"?", "MyString"}], "\[IndentingNewLine]", 
+ RowBox[{"?", "DoTheExport"}]}], "Input",
+ CellChangeTimes->{{3.972734273847906*^9, 3.972734277905343*^9}, {
+  3.973066609392829*^9, 3.973066612625312*^9}, {3.973066677585648*^9, 
+  3.973066679974537*^9}, {3.973067001143702*^9, 3.97306700517516*^9}},
+ Background->GrayLevel[0.85]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox["\<\"Get information about the file being executed. Returns in \
+order:\\n- The Mathematica version, in the form XXX.YYY.ZZZ\\n- The name of \
+the file being executed, with full path\\n- The current datetime, down to the \
+second\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.974805995356741*^9},
+ CellTags->"Info23974809595-4430364"],
+
+Cell[BoxData[
+ StyleBox["\<\"Converts the argument to scientific notation. Returns a \
+string. [Defaults to 16 digits for now]\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.974805995405993*^9},
+ CellTags->"Info33974809595-4430364"],
+
+Cell[BoxData[
+ StyleBox["\<\"Exports the data, formatted correctly, to a file.\\nPositional \
+arguments (in order):\\nfilename -- Self-explanatory, name of the file to \
+export the data to\\ndesc -- LIST of strings composing each line of the file \
+description\\ncols -- LIST of strings containg the header for each data \
+column\\ndata -- LIST of arrays containing the data to export\\nOptional \
+arguments:\\ncomment -- Symbol to use to indicate non-data lines [default: #]\
+\\nfull -- Whether to include the full path of the script being run [default: \
+True]\\nparameters -- Dictionary (Association object) with the names and \
+values of parameters [default: <||> (empty)]\"\>", "MSG"]], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.974805995456194*^9},
+ CellTags->"Info43974809595-4430364"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xx", "=", 
+   RowBox[{"N", "/@", 
+    RowBox[{"Subdivide", "[", 
+     RowBox[{"0", ",", "5", ",", "31"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"yy", "=", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"-", 
+     RowBox[{"xx", "^", "2"}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.9729932759466047`*^9, 3.9729932800396557`*^9}, {
+  3.972993344229854*^9, 3.9729933717894697`*^9}, {3.972993407622788*^9, 
+  3.972993468268694*^9}, {3.972993806038748*^9, 3.9729938188857393`*^9}, {
+  3.972995021468573*^9, 3.972995021820648*^9}, {3.9730670196013308`*^9, 
+  3.973067020073077*^9}},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{"xx", ",", "yy", ",", 
+     RowBox[{"2", "*", "yy"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"cols", "=", 
+   RowBox[{"{", 
+    RowBox[{"\"\<x_dat\>\"", ",", "\"\<y\>\"", ",", "\"\<my_y\>\""}], "}"}]}],
+   ";"}]}], "Input",
+ CellChangeTimes->{{3.9729938256005*^9, 3.972993835181884*^9}, {
+  3.972993955366001*^9, 3.972994018157193*^9}, {3.9729943565338593`*^9, 
+  3.972994367643592*^9}, {3.972994677575048*^9, 3.972994697918064*^9}, {
+  3.9729948689021673`*^9, 3.972994869732616*^9}, {3.972995027278236*^9, 
+  3.972995038973789*^9}, {3.9729953505409203`*^9, 3.972995359317604*^9}, {
+  3.972995565582603*^9, 3.9729955669095087`*^9}, {3.9729957061017427`*^9, 
+  3.972995715900743*^9}, {3.973055743947201*^9, 3.9730557517147827`*^9}, {
+  3.97305578278671*^9, 3.973055783202633*^9}},
+ Background->GrayLevel[0.85]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"dict", "=", 
+  RowBox[{"<|", 
+   RowBox[{
+    RowBox[{"\"\<aa\>\"", "\[Rule]", "1"}], ",", 
+    RowBox[{"\"\<bb\>\"", "\[Rule]", 
+     RowBox[{"-", "6.5"}]}], ",", 
+    RowBox[{"\"\<cc\>\"", "\[Rule]", "\"\<full\>\""}]}], 
+   "|>"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Head", "@", "%"}]}], "Input",
+ CellChangeTimes->{{3.974805855441424*^9, 3.974805857505837*^9}},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"aa\"\>", "\[Rule]", "1"}], ",", 
+   RowBox[{"\<\"bb\"\>", "\[Rule]", 
+    RowBox[{"-", "6.5`"}]}], ",", 
+   RowBox[{"\<\"cc\"\>", "\[Rule]", "\<\"full\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.9748058771096888`*^9, 3.974806000927059*^9}],
+
+Cell[BoxData["Association"], "Output",
+ CellChangeTimes->{3.9748058771096888`*^9, 3.974806000927861*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"DoTheExport", "[", 
+  RowBox[{"\"\<out-math2.dat\>\"", ",", 
+   RowBox[{"{", "\"\<This is the description\>\"", "}"}], ",", "cols", ",", 
+   "data", ",", 
+   RowBox[{"full", "\[Rule]", "False"}], ",", 
+   RowBox[{"parameters", "\[Rule]", "dict"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.972995041915659*^9, 3.9729950454501667`*^9}, {
+  3.973055670915421*^9, 3.973055671817971*^9}, {3.973065337442092*^9, 
+  3.973065374149661*^9}, {3.974805845017807*^9, 3.974805849302847*^9}},
+ Background->GrayLevel[0.85]]
+},
+WindowSize->{1920, 981},
+WindowMargins->{{Automatic, -383}, {0, 10}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info23974809595-4430364"->{
+  Cell[1869, 56, 371, 6, 98, "Print",
+   CellTags->"Info23974809595-4430364"]},
+ "Info33974809595-4430364"->{
+  Cell[2243, 64, 244, 4, 43, "Print",
+   CellTags->"Info33974809595-4430364"]},
+ "Info43974809595-4430364"->{
+  Cell[2490, 70, 796, 12, 214, "Print",
+   CellTags->"Info43974809595-4430364"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info23974809595-4430364", 6637, 177},
+ {"Info33974809595-4430364", 6747, 180},
+ {"Info43974809595-4430364", 6857, 183}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 174, 4, 51, "Input"],
+Cell[CellGroupData[{
+Cell[757, 28, 227, 4, 51, "Input"],
+Cell[987, 34, 421, 6, 25, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1445, 45, 399, 7, 96, "Input"],
+Cell[CellGroupData[{
+Cell[1869, 56, 371, 6, 98, "Print",
+ CellTags->"Info23974809595-4430364"],
+Cell[2243, 64, 244, 4, 43, "Print",
+ CellTags->"Info33974809595-4430364"],
+Cell[2490, 70, 796, 12, 214, "Print",
+ CellTags->"Info43974809595-4430364"]
+}, Open  ]]
+}, Open  ]],
+Cell[3313, 86, 668, 17, 75, "Input"],
+Cell[3984, 105, 910, 19, 75, "Input"],
+Cell[CellGroupData[{
+Cell[4919, 128, 420, 11, 74, "Input"],
+Cell[5342, 141, 338, 8, 35, "Output"],
+Cell[5683, 151, 104, 1, 33, "Output"]
+}, Open  ]],
+Cell[5802, 155, 532, 10, 51, "Input"]
+}
+]
+*)
+

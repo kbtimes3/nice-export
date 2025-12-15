@@ -1,0 +1,2 @@
+# Remove the notebook from the repository statistics, as it is quite large
+*.nb linguist-vendored
