@@ -40,8 +40,10 @@ DoTheExport["out.dat",{"The description"},cols,data];
 Refer to `nice_export.wl` for more details on the arguments, or run `?DoTheExport`.
 The code was tested in a script (`test.wl`) **and** in a notebook (`test.nb`).
 
-## TODO
+## License
 
-- Add option to change significant digits for Mathematica code
-- Write C version
-- Write C++ version
+MIT
+
+## Copyright
+
+Copyright (c) 2026 Killian Bouzoud

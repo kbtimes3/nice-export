@@ -1,3 +1,6 @@
+(* Copyright (c) Killian Bouzoud.                                                    *)
+(* Licensed under the MIT license. See LICENSE file in the project root for details. *)
+
 GetInfos::usage = "Get information about the file being executed. Returns in order:\n\
 - The Mathematica version, in the form XXX.YYY.ZZZ\n\
 - The name of the file being executed, with full path\n\

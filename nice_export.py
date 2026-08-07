@@ -1,3 +1,6 @@
+# Copyright (c) Killian Bouzoud.
+# Licensed under the MIT license. See LICENSE file in the project root for details.
+
 import os
 import sys
 import datetime
